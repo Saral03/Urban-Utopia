@@ -3,20 +3,49 @@
 import {
   createBrowserRouter,
   RouterProvider,
+  Outlet
 } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Products from "./Pages/Products/Products";
+import Product from "./Pages/Product/Product";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+
+const Layout=()=>{
+  return(
+    <div className="app">
+    <NavBar/>
+    <Outlet/>
+
+    <Footer/>
+
+
+
+    </div>
+
+
+  );
+}
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <span>Home</span>,
-  },
-  {
-    path: "/products/:id",
-    element: <div>Category</div>,
-  },
-  {
-    path: "/product/:id",
-    element: <div>Product</div>,
+    element: <Layout/>,
+    children:[
+      {
+        path:"/",
+        element:<Home/>
+      },
+      {
+        path:"/products/:id",
+        element:<Products/>
+      },
+      {
+        path:"/product/:id",
+        element:<Product/>
+      }
+
+    ]
   },
 ]);
 

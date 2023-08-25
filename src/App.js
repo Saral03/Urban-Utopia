@@ -10,7 +10,7 @@ import Products from "./Pages/Products/Products";
 import Product from "./Pages/Product/Product";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-
+import "./app.scss"
 const Layout=()=>{
   return(
     <div className="app">

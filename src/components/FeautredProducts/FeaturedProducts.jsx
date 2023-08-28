@@ -51,6 +51,6 @@ const FeaturedProducts =({type})=>{
             ))}
             </div>
         </div>
-    )
+    );
 }
 export default FeaturedProducts;
